@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média de Dois Números</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        input{
+            padding: 8px;
+            margin: 5px;
+            width: 200px;
+        }
+
+        button{
+            padding: 10px;
+            width: 220px;
+            cursor: pointer;
+        }
+
+        #resultado{
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calcular Média</h1>
+
+    <input type="number" id="valor1" placeholder="Digite o primeiro número">
+    <br>
+
+    <input type="number" id="valor2" placeholder="Digite o segundo número">
+    <br><br>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            let valor1 = document.getElementById("valor1").value;
+            let valor2 = document.getElementById("valor2").value;
+            let resultado = document.getElementById("resultado");
+
+            if (valor1 == "" || valor2 == "") {
+                resultado.innerHTML = "Preencha os dois campos!";
+                return;
+            }
+
+            valor1 = Number(valor1);
+            valor2 = Number(valor2);
+
+            let soma = valor1 + valor2;
+            let media = soma / 2;
+
+            resultado.innerHTML = "Soma: " + soma + "<br>Média: " + media;
+        }
+    </script>
+</body>
+</html>
